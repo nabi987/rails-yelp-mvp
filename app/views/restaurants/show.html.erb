@@ -1,0 +1,13 @@
+<div class="container">
+  <h1><%= @restaurant.name %></h1>
+  <p><%= @restaurant.category.capitalize %></p>
+  <p>Location: <%= @restaurant.address %></p>
+  <p>Phone number: <%= @restaurant.phone_number %></p>
+
+  <% @restaurant.reviews.each do |review| %>
+    <p><%= review.content %></p>
+    <p>Rating: <%= review.rating %></p>
+  <% end %>
+
+  <%= link_to "Back to restaurants list", restaurants_path, class: "btn btn-outline-primary" %>
+</div>
